@@ -7,13 +7,24 @@ a {
   color: #00B7FF;
 }
 
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+h1 {
+  font-weight: 200px;
+  font-size: 64px;
 }
 
-.login img {
-  height: 30px;
+img {
+  height: 10px;
+}
+
+a {
+  text-decoration: none;
+  padding: 20px;
+  color: black;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #e2197d;
+  margin: 10px;
+}
+
+a:hover {
+  border: 2px solid #e2197d;
 }
