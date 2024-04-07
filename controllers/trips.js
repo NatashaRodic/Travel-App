@@ -5,8 +5,6 @@ module.exports = {
     index
 }
 
-
-
 async function index(req, res) {
     const trips = await Trip.find({})
     console.log(trips)
