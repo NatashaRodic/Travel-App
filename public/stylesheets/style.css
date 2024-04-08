@@ -1,7 +1,12 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: whitesmoke;
+  margin: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 a {
@@ -9,8 +14,9 @@ a {
 }
 
 h1 {
+  text-align: center;
   font-weight: 200px;
-  font-size: 64px;
+  font-size: 34px;
 }
 
 img {
@@ -51,12 +57,114 @@ nav .link a:hover {
 
 .tripDisplay {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tripDisplay .tripCard {
-  background-color: rgb(255, 255, 255);
+  max-width: 300px;
+  background-color: rgb(250, 250, 252);
   margin: 10px;
-  padding: 20px;
-  border: 1px #323236 solid;
+  border: 1px #ffffff solid;
   border-radius: 20px;
+  overflow: hidden
+}
+
+.tripDisplay .addPadding {
+  padding: 20px;
+}
+
+.tripDisplay .tripCard:hover {
+  background-color: rgb(255, 255, 255);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 0px 8px 28px 0px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 0px 8px 28px 0px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 8px 28px 0px rgba(0, 0, 0, 0.17);
+}
+
+.tripDisplay img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tripCard .btnBlack {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.tripCard .btnBlack a {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(38, 38, 38);
+  text-decoration: none;
+  color: white;
+}
+
+.tripCard .btnBlack a:hover {
+  color: rgb(253, 233, 250);
+  background-color: rgb(69, 69, 71);
+}
+
+
+.login2 {
+  color: white;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(38, 38, 38);
+  text-decoration: none;
+
+}
+
+
+.welcomeScreeen {
+  height: calc(100vh - 85px);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.bagImage {
+  flex-basis: 30%;
+  background-color: rgb(234, 121, 213);
+  background-image: url(../images/bag.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .welcomeScreeen {
+    flex-direction: column;
+  }
+
+  .welcomeScreeen {
+    height: calc(100vh - 485px);
+  }
+
+}
+
+.loginScreen {
+  justify-content: center;
+  align-items: center;
+  flex-basis: 70%;
+  height: 100%;
+  display: flex;
+}
+
+.loginScreen .link a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(38, 38, 38);
+  text-decoration: none;
+  color: white;
+}
+
+.loginMessage h1 {
+  font-weight: 200;
+  text-align: left;
 }
