@@ -5,4 +5,4 @@ const itemsCtrl = require('../controllers/items')
 router.post('/trips/:id/items', itemsCtrl.create)
 
 
-module.exports = router
+module.exports = router;
