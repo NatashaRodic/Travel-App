@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: whitesmoke;
 }
 
 a {
@@ -16,15 +17,46 @@ img {
   height: 10px;
 }
 
-a {
-  text-decoration: none;
-  padding: 20px;
-  color: black;
-  border: 2px solid transparent;
-  border-bottom: 2px solid #e2197d;
-  margin: 10px;
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 700;
 }
 
-a:hover {
-  border: 2px solid #e2197d;
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+nav .link {
+
+  border: 2px solid transparent;
+
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+nav .link a {
+  display: block;
+  padding: 10px 5px;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+  color: rgb(16, 16, 18);
+}
+
+nav .link a:hover {
+  border-bottom: 4px solid #e2197d;
+}
+
+.tripDisplay {
+  display: flex;
+}
+
+.tripDisplay .tripCard {
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  padding: 20px;
+  border: 1px #323236 solid;
+  border-radius: 20px;
 }

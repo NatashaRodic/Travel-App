@@ -2,6 +2,28 @@
 
     <h1>My trips</h1>
     <p>
-        <%= trips %>
+
+
+    <div class="tripDisplay">
+        <% trips.forEach(function(trip) { %>
+
+            <div class="tripCard">
+                <img src="https://picsum.photos/500/300.webp" alt="">
+                <h2>
+                    <%= trip.tripLength %> days in <%= trip.location %>
+                </h2>
+                <span>for <%= trip.tripType %></span>
+
+                <div class="notes">
+                    You don't have any notes for this trip
+                </div>
+
+                <div class="btnBlack"> <a href="/trips/">DETAILS</a></div>
+            </div>
+
+            <% }); %>
+    </div>
+
+
     </p>
     <%- include('../partials/footer') %>
