@@ -18,9 +18,13 @@
         <label>Item Name</label>
         <input type="text" name="itemName">
         <label>Item Quantity</label>
-        <input type="text" name="itemQuantity">
-        <label>Is your item Essential?</label>
-        <input type="checkbox" name="essential">
+        <input type="number" name="itemQuantity">
+        <!-- <label>Is your item Essential?</label>
+        <input type="checkbox" name="essential"> -->
         <input type="submit" value="Add Item">
     </form>
+    <div>
+        <%= trip.items %>
+    </div>
+
     <%- include('../partials/footer') %>
