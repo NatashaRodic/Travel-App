@@ -3,7 +3,8 @@ const Trip = require('../models/trip')
 
 module.exports = {
     index,
-    new: newTrip
+    new: newTrip,
+    create
 }
 
 async function index(req, res) {
@@ -14,4 +15,14 @@ async function index(req, res) {
 
 function newTrip(req, res) {
     res.render('trips/new', { title: 'Create a new Trip', errorMsg: '' })
+}
+
+async function create(req, res) {
+    try {
+        const trips = await Trip.create(req.body)
+        res.redirect(`/trips`)
+    } catch (error) {
+        console.log(error)
+        res.render('trips/new', { errorMsg: err.message })
+    }
 }
