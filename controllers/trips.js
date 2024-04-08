@@ -4,7 +4,8 @@ const Trip = require('../models/trip')
 module.exports = {
     index,
     new: newTrip,
-    create
+    create,
+    show
 }
 
 async function index(req, res) {
@@ -24,5 +25,14 @@ async function create(req, res) {
     } catch (error) {
         console.log(error)
         res.render('trips/new', { errorMsg: err.message })
+    }
+}
+
+async function show(req, res) {
+    try {
+        const trip = await Trip.findById(req.param.id)
+        res.render('trip/show', { title: 'Trip Details', trip })
+    } catch (error) {
+        console.log(error)
     }
 }
