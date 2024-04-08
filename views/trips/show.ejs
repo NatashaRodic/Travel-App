@@ -24,7 +24,35 @@
         <input type="submit" value="Add Item">
     </form>
     <div>
-        <%= trip.items %>
+        <% if (trip.items.length) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Essential?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% trip.items.forEach((i)=> { %>
+                        <tr>
+                            <td>
+                                <%= i.itemName %>
+                            </td>
+                            <td>
+                                <%= i.itemQuantity %>
+                            </td>
+                            <td>
+                                <%= i.essential %>
+                            </td>
+                        </tr>
+                        <% }); %>
+
+                </tbody>
+            </table>
+            <% } else { %>
+                <h5>No Items Yet? Start creating your list</h5>
+                <% } %>
     </div>
 
     <%- include('../partials/footer') %>
