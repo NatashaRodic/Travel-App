@@ -20,8 +20,8 @@ function newTrip(req, res) {
 
 async function create(req, res) {
     try {
-        const trips = await Trip.create(req.body)
-        res.redirect(`/trips`)
+        const trip = await Trip.create(req.body)
+        res.redirect(`/trips/${trip._id}`)
     } catch (error) {
         console.log(error)
         res.render('trips/new', { errorMsg: err.message })
@@ -30,8 +30,8 @@ async function create(req, res) {
 
 async function show(req, res) {
     try {
-        const trip = await Trip.findById(req.param.id)
-        res.render('trip/show', { title: 'Trip Details', trip })
+        const trip = await Trip.findById(req.params.id)
+        res.render('trips/show', { title: 'Trip Details', trip })
     } catch (error) {
         console.log(error)
     }
