@@ -7,5 +7,7 @@ router.get('/', tripsCtrl.index)
 
 router.get('/new', tripsCtrl.new)
 
+router.post('/', tripsCtrl.create)
+
 
 module.exports = router;
