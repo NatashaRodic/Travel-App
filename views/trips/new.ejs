@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+    <form action="/trips" method="POST">
+        <label>Location</label>
+        <input type="text" name="location">
+        <label>How long is your trip?</label>
+        <input type="number" name="days" id="">
+        <label>Type of your trip</label>
+        <select name="type"></select>
+        <option value="Business">Business</option>
+        <option value="Leisure">Leisure</option>
+        <label>Notes:</label>
+        <input type="text" name="notes">
+        <button type="submit">Create Trip</button>
+    </form>
+    <%- include('../partials/footer') %>
