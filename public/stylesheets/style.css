@@ -168,3 +168,39 @@ nav .link a:hover {
   font-weight: 200;
   text-align: left;
 }
+
+.tripForm form {
+  font-size: 22px;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.tripForm * {
+  margin-top: 20px;
+}
+
+.tripForm .btnBlack {
+  font-size: 20px;
+  display: block;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(38, 38, 38);
+  text-decoration: none;
+  color: white;
+  margin: 0 10px 0 auto;
+}
+
+.tripForm .btnBlack:hover {
+  color: rgb(253, 233, 250);
+  background-color: rgb(69, 69, 71);
+}
+
+.tripForm .button {
+  background-color: #00B7FF;
+  text-align: right;
+}
