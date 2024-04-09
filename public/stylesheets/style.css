@@ -171,10 +171,9 @@ nav .link a:hover {
 
 .tripForm form {
   font-size: 22px;
-  background-color: red;
   display: flex;
   flex-direction: column;
-  width: 600px;
+  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -200,7 +199,29 @@ nav .link a:hover {
   background-color: rgb(69, 69, 71);
 }
 
+.tripForm input,
+.tripForm select {
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid black;
+}
+
+.tripForm select:focus,
+.tripForm select:focus-visible,
+.tripForm input:focus,
+.tripForm input:focus-visible {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid #e2197d;
+}
+
 .tripForm .button {
-  background-color: #00B7FF;
+  margin-top: 50px;
   text-align: right;
+}
+
+.tripForm .length input {
+  max-width: 90px;
 }

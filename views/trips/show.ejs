@@ -14,15 +14,17 @@
         </div>
     </section>
     <h2>Pack your items!!!</h2>
-    <form method="POST" action="/trips/<%= trip._id %>/items">
-        <label>Item Name</label>
-        <input type="text" name="itemName">
-        <label>Item Quantity</label>
-        <input type="number" name="itemQuantity">
-        <label>Is your item Essential?</label>
-        <input type="checkbox" name="essential">
-        <input type="submit" value="Add Item">
-    </form>
+    <div class="detailsForm">
+        <form method="POST" action="/trips/<%= trip._id %>/items">
+            <label>Item Name</label>
+            <input type="text" name="itemName">
+            <label>Item Quantity</label>
+            <input type="number" name="itemQuantity">
+            <label>Is your item Essential?</label>
+            <input type="checkbox" name="essential">
+            <input type="submit" value="Add Item">
+        </form>
+    </div>
     <div>
         <% if (trip.items.length) { %>
             <table>
