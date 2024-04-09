@@ -15,7 +15,7 @@ const itemScheme = new Schema({
     essential: {
         type: Boolean,
         default: false
-    }
+    },
 })
 
 const tripSchema = new Schema({
@@ -32,7 +32,14 @@ const tripSchema = new Schema({
     tripType: {
         type: String,
     },
-    items: [itemScheme]
+    items: [itemScheme],
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 });

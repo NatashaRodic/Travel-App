@@ -19,6 +19,9 @@ function newTrip(req, res) {
 }
 
 async function create(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     try {
         const trip = await Trip.create(req.body)
         res.redirect(`/trips/${trip._id}`)

@@ -8,7 +8,6 @@ async function create(req, res) {
     req.body.essential = !!req.body.essential;
     const trip = await Trip.findById(req.params.id);
     trip.items.push(req.body)
-
     try {
         await trip.save()
         console.log(trip)

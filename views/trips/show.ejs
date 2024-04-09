@@ -13,56 +13,57 @@
             <%= trip.tripType %>
         </div>
     </section>
-    <h2>Pack your items!!!</h2>
-    <div class="detailsForm">
-        <form method="POST" action="/trips/<%= trip._id %>/items">
-            <div class="name">
-                <label>Item Name</label>
-                <input type="text" name="itemName">
-            </div>
-            <div class="quantity">
-                <label>Item Quantity</label>
-                <input type="number" name="itemQuantity">
-            </div>
-            <div class="essential">
-                <label>Is your item Essential?</label>
-                <input type="checkbox" name="essential">
-            </div>
-            <div class="button">
-                <input class="btnBlack" type="submit" value="Add Item">
-            </div>
-        </form>
-    </div>
-    <div class="itemsToBring">
-        <% if (trip.items.length) { %>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Quantity</th>
-                        <th>Essential?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% trip.items.forEach((i)=> { %>
+    <% if (user) { %>
+        <h2>Pack your items!!!</h2>
+        <div class="detailsForm">
+            <form method="POST" action="/trips/<%= trip._id %>/items">
+                <div class="name">
+                    <label>Item Name</label>
+                    <input type="text" name="itemName">
+                </div>
+                <div class="quantity">
+                    <label>Item Quantity</label>
+                    <input type="number" name="itemQuantity">
+                </div>
+                <div class="essential">
+                    <label>Is your item Essential?</label>
+                    <input type="checkbox" name="essential">
+                </div>
+                <div class="button">
+                    <input class="btnBlack" type="submit" value="Add Item">
+                </div>
+            </form>
+        </div>
+        <div class="itemsToBring">
+            <% if (trip.items.length) { %>
+                <table>
+                    <thead>
                         <tr>
-                            <td>
-                                <%= i.itemName %>
-                            </td>
-                            <td>
-                                <%= i.itemQuantity %>
-                            </td>
-                            <td>
-                                <%= i.essential ? '✅' : '❌' %>
-                            </td>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Essential?</th>
                         </tr>
-                        <% }); %>
+                    </thead>
+                    <tbody>
+                        <% trip.items.forEach((i)=> { %>
+                            <tr>
+                                <td>
+                                    <%= i.itemName %>
+                                </td>
+                                <td>
+                                    <%= i.itemQuantity %>
+                                </td>
+                                <td>
+                                    <%= i.essential ? '✅' : '❌' %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+                <% } else { %>
+                    <h5>No Items Yet? Start creating your list</h5>
+                    <% } %>
+        </div>
+        <% } %>
 
-                </tbody>
-            </table>
-            <% } else { %>
-                <h5>No Items Yet? Start creating your list</h5>
-                <% } %>
-    </div>
-
-    <%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>

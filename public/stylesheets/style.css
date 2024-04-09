@@ -225,3 +225,97 @@ nav .link a:hover {
 .tripForm .length input {
   max-width: 90px;
 }
+
+
+
+
+.detailsForm form {
+  padding: 20px;
+  background-color: rgb(223, 225, 232);
+  border-radius: 20px;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.detailsForm * {
+  margin-top: 20px;
+}
+
+.detailsForm .btnBlack {
+  font-size: 20px;
+  display: block;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(38, 38, 38);
+  text-decoration: none;
+  color: white;
+  margin: 0 10px 0 0px;
+}
+
+.detailsForm .btnBlack:hover {
+  color: rgb(253, 233, 250);
+  background-color: rgb(69, 69, 71);
+}
+
+.detailsForm input,
+.detailsForm select {
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid black;
+}
+
+.detailsForm select:focus,
+.detailsForm select:focus-visible,
+.detailsForm input:focus,
+.detailsForm input:focus-visible {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid #e2197d;
+}
+
+.detailsForm .button {
+  margin-top: 50px;
+}
+
+.itemsToBring {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.itemsToBring * {
+  margin: 10px;
+}
+
+.tripDetails {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.tripDetails .label {
+  font-size: 16px;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.tripDetails .detail {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  font-weight: 600;
+}
