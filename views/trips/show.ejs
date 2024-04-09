@@ -19,8 +19,8 @@
         <input type="text" name="itemName">
         <label>Item Quantity</label>
         <input type="number" name="itemQuantity">
-        <!-- <label>Is your item Essential?</label>
-        <input type="checkbox" name="essential"> -->
+        <label>Is your item Essential?</label>
+        <input type="checkbox" name="essential">
         <input type="submit" value="Add Item">
     </form>
     <div>
@@ -43,7 +43,7 @@
                                 <%= i.itemQuantity %>
                             </td>
                             <td>
-                                <%= i.essential %>
+                                <%= i.essential ? '✅' : '❌' %>
                             </td>
                         </tr>
                         <% }); %>
