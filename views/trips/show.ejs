@@ -1,31 +1,39 @@
 <%- include('../partials/header') %>
-    <section id="show-page">
-        <div>Location</div>
-        <div>
+    <section id="show-page" class="tripDetails">
+        <div class="label">Location</div>
+        <div class="detail">
             <%= trip.location %>
         </div>
-        <div>Days of Stay: </div>
-        <div>
+        <div class="label">Days of Stay: </div>
+        <div class="detail">
             <%= trip.tripLength %>
         </div>
-        <div>Type of your Trip: </div>
-        <div>
+        <div class="label">Type of your Trip: </div>
+        <div class="detail">
             <%= trip.tripType %>
         </div>
     </section>
     <h2>Pack your items!!!</h2>
     <div class="detailsForm">
         <form method="POST" action="/trips/<%= trip._id %>/items">
-            <label>Item Name</label>
-            <input type="text" name="itemName">
-            <label>Item Quantity</label>
-            <input type="number" name="itemQuantity">
-            <label>Is your item Essential?</label>
-            <input type="checkbox" name="essential">
-            <input type="submit" value="Add Item">
+            <div class="name">
+                <label>Item Name</label>
+                <input type="text" name="itemName">
+            </div>
+            <div class="quantity">
+                <label>Item Quantity</label>
+                <input type="number" name="itemQuantity">
+            </div>
+            <div class="essential">
+                <label>Is your item Essential?</label>
+                <input type="checkbox" name="essential">
+            </div>
+            <div class="button">
+                <input class="btnBlack" type="submit" value="Add Item">
+            </div>
         </form>
     </div>
-    <div>
+    <div class="itemsToBring">
         <% if (trip.items.length) { %>
             <table>
                 <thead>
