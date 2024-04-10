@@ -5,7 +5,8 @@ module.exports = {
     index,
     new: newTrip,
     create,
-    show
+    show,
+    delete: deleteTrip
 }
 
 async function index(req, res) {
@@ -37,5 +38,18 @@ async function show(req, res) {
         res.render('trips/show', { title: 'Trip Details', trip })
     } catch (error) {
         console.log(error)
+    }
+}
+
+async function deleteTrip(req, res) {
+    try {
+        const trip = await Trip.findOneAndDelete({ '_id': req.params.id, 'user': req.user._id });
+        if (!trip) {
+            return res.status(404).send("Trip not found or you don't have permission to delete it.");
+        }
+        res.redirect(`/trips`);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Internal Server Error");
     }
 }
