@@ -319,3 +319,10 @@ nav .link a:hover {
   margin-right: 10px;
   font-weight: 600;
 }
+
+.packed {
+  text-decoration: none;
+  color: white;
+  background-color: #e2197d;
+  padding: 3px 6px;
+}

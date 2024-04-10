@@ -49,50 +49,33 @@
                             <th>Item</th>
                             <th>Quantity</th>
                             <th>Essential?</th>
-                            <th>Is your item packed?</th>
+                            <!-- <th>Is your item packed?</th> -->
+
                         </tr>
                     </thead>
                     <tbody>
-                        <% trip.items.forEach((i)=> { %>
+                        <% trip.items.forEach((item)=> { %>
                             <tr>
                                 <td>
-                                    <%= i.itemName %>
+                                    <%= item.itemName %>
                                 </td>
                                 <td>
-                                    <%= i.itemQuantity %>
+                                    <%= item.itemQuantity %>
                                 </td>
                                 <td>
-                                    <%= i.essential ? '❗️' : '' %>
+                                    <%= item.essential ? '❗️' : '' %>
                                 </td>
                                 <td>
-                                    <% if (i.packed) { %>
-                                        '✅'
-                                        <% } else { %>
-                                            <form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
-                                                <input class="checkbox" type="checkbox" name="text"
-                                                    value="<%= trip.text %>">
-                                                <button type="submit">Packed?</button>
-                                            </form>
-                                            <% } %>
+                                    <%= item.packed ? '✅' : '' %>
+                                        <form action="/items/<%= item._id %>?_method=PUT" method="POST">
+                                            <label>Is your item packed</label>
+                                            <input type="checkbox" name="essential">
+                                            <button type="submit">Check</button>
+                                        </form>
                                 </td>
-                                <!-- <td>
-                                    <% if (!i.packed) { %>
-                                       
-                                        <% } %>
-                                </td> -->
-                                <!-- <td>
-                                    <%= i.packed ? '✅' : '❎' %>
 
-                                </td>
-                                <td>
-                                    <form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
-                                        <input type="checkbox" name="text" value="<%= trip.text %>">
-                                        <button type="submit">Packed?</button>
-                                    </form>
-                                </td> -->
 
-                            </tr>
-                            <% }); %>
+                                <% }); %>
                     </tbody>
                 </table>
                 <% } else { %>

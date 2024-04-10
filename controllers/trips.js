@@ -6,7 +6,8 @@ module.exports = {
     new: newTrip,
     create,
     show,
-    delete: deleteTrip
+    delete: deleteTrip,
+
 }
 
 async function index(req, res) {
@@ -53,3 +54,4 @@ async function deleteTrip(req, res) {
         res.status(500).send("Internal Server Error");
     }
 }
+

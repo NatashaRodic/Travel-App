@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 
 const itemScheme = new Schema({
+    packed: {
+        type: Boolean,
+        default: false
+    },
     itemName: {
         type: String,
         required: true
@@ -16,10 +20,7 @@ const itemScheme = new Schema({
         type: Boolean,
         default: false
     },
-    packed: {
-        type: Boolean,
-        default: false
-    },
+
 })
 
 const tripSchema = new Schema({
