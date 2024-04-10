@@ -11,5 +11,7 @@ router.post('/', tripsCtrl.create)
 
 router.get('/:id', tripsCtrl.show)
 
+router.delete('/:id', tripCtrl.delete)
+
 
 module.exports = router;
