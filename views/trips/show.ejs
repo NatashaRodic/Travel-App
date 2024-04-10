@@ -16,7 +16,7 @@
     <td>
         <% if (user?._id.equals(trip.user)) { %>
             <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
-                <button type="submit">DELETE</button>
+                <button class="btnBlack" type="submit">DELETE</button>
             </form>
             <% } %>
     </td>
@@ -49,6 +49,7 @@
                             <th>Item</th>
                             <th>Quantity</th>
                             <th>Essential?</th>
+                            <th>Is your item packed?</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,8 +62,35 @@
                                     <%= i.itemQuantity %>
                                 </td>
                                 <td>
-                                    <%= i.essential ? '✅' : '❌' %>
+                                    <%= i.essential ? '❗️' : '' %>
                                 </td>
+                                <td>
+                                    <% if (i.packed) { %>
+                                        '✅'
+                                        <% } else { %>
+                                            <form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
+                                                <input class="checkbox" type="checkbox" name="text"
+                                                    value="<%= trip.text %>">
+                                                <button type="submit">Packed?</button>
+                                            </form>
+                                            <% } %>
+                                </td>
+                                <!-- <td>
+                                    <% if (!i.packed) { %>
+                                       
+                                        <% } %>
+                                </td> -->
+                                <!-- <td>
+                                    <%= i.packed ? '✅' : '❎' %>
+
+                                </td>
+                                <td>
+                                    <form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
+                                        <input type="checkbox" name="text" value="<%= trip.text %>">
+                                        <button type="submit">Packed?</button>
+                                    </form>
+                                </td> -->
+
                             </tr>
                             <% }); %>
                     </tbody>
