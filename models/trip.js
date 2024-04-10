@@ -16,6 +16,10 @@ const itemScheme = new Schema({
         type: Boolean,
         default: false
     },
+    packed: {
+        type: Boolean,
+        default: false
+    },
 })
 
 const tripSchema = new Schema({
