@@ -5,13 +5,13 @@ const tripsCtrl = require('../controllers/trips')
 
 router.get('/', tripsCtrl.index)
 
-router.get('/new', tripsCtrl.new)
+router.get('/new', ensureLoggedIn, tripsCtrl.new)
 
 router.post('/', tripsCtrl.create)
 
 router.get('/:id', tripsCtrl.show)
 
-router.delete('/:id', tripCtrl.delete)
+router.delete('/:id', ensureLoggedIn, tripsCtrl.delete)
 
 
 module.exports = router;
