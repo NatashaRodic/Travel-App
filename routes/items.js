@@ -4,5 +4,7 @@ const itemsCtrl = require('../controllers/items')
 
 router.post('/trips/:id/items', itemsCtrl.create)
 
+router.put('items/:id', ensureLoggedIn, tripsCtrl.update)
+
 
 module.exports = router;
