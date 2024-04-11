@@ -305,7 +305,7 @@ nav .link a:hover {
 
 .detailsForm .btnBlack:hover {
   color: rgb(253, 233, 250);
-  background-color: rgb(69, 69, 71);
+  background-color: rgb(86, 192, 99);
 }
 
 .detailsForm input,
@@ -370,12 +370,7 @@ nav .link a:hover {
   font-weight: 600;
 }
 
-.packed {
-  text-decoration: none;
-  color: white;
-  background-color: #e2197d;
-  padding: 3px 6px;
-}
+
 
 .itemsPanel {
   display: flex;
@@ -392,4 +387,12 @@ nav .link a:hover {
     flex-basis: 100%;
   }
 
+}
+
+.packedBtn {
+  background-color: #b94680;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  color: white;
 }

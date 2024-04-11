@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+    <h1>
+        <%= title %>
+    </h1>
+    <div class="tripForm">
+        <form action="/trips" method="POST">
+            <div class="location">
+                <label>Location</label>
+                <input type="text" name="location">
+            </div>
+            <div class="length">
+                <label>How long is your trip?</label>
+                <input type="number" name="tripLength" id="">
+            </div>
+            <div class="tripType">
+                <label>Type of your trip</label>
+                <select name="tripType">
+                    <option value="Business">Business</option>
+                    <option value="Leisure">Leisure</option>
+                </select>
+            </div>
+            <div class="button">
+                <button class="btnBlack" type="submit">Create trip</button>
+            </div>
+        </form>
+    </div>
+    <%- include('../partials/footer') %>

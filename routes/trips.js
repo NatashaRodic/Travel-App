@@ -13,7 +13,7 @@ router.get('/:id', tripsCtrl.show)
 
 router.delete('/:id', ensureLoggedIn, tripsCtrl.delete)
 
-router.put(':id', ensuredLoggedIn, tripsCtrl.update)
+router.put('/:id', tripsCtrl.update)
 
 
 

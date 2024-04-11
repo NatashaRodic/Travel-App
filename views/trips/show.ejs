@@ -14,11 +14,20 @@
         </div>
         <div>
             <% if (user?._id.equals(trip.user)) { %>
+                <a class="btnBlack" href="/trips">Update Trip</a>
+                <!-- <form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
+                    <button class="btnRed" type="submit">Update Trip</button>
+                </form> -->
+                <% } %>
+        </div>
+        <div>
+            <% if (user?._id.equals(trip.user)) { %>
                 <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
                     <button class="btnRed" type="submit">Delete Trip</button>
                 </form>
                 <% } %>
         </div>
+
     </section>
 
     <% if (user) { %>
@@ -73,7 +82,7 @@
                                     </td>
                                     <td>
                                         <form action="/items/<%= trip._id %>/<%= item._id %>?_method=PUT" method="POST">
-                                            <button type="submit">
+                                            <button class="packedBtn" type="submit">
                                                 <%= item.packed ? 'Unpack' : 'Pack' %>
                                             </button>
                                         </form>

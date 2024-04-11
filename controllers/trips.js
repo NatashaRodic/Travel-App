@@ -7,6 +7,7 @@ module.exports = {
     create,
     show,
     delete: deleteTrip,
+    update
 
 }
 
@@ -53,5 +54,14 @@ async function deleteTrip(req, res) {
         console.log(error);
         res.status(500).send("Internal Server Error");
     }
+}
+
+async function update(req, res) {
+    //---console.log(req.body);
+    const trip = await Trip.findById(req.params.id)
+    console.log("I'm updating YOUR TRIP");
+    //console.log(req.body);
+    console.log(req.params);
+    res.render(`trips/update`, { title: 'Update Trip', trip })
 }
 
