@@ -12,14 +12,15 @@
         <div class="detail">
             <%= trip.tripType %>
         </div>
+        <div>
+            <% if (user?._id.equals(trip.user)) { %>
+                <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
+                    <button class="btnRed" type="submit">Delete Trip</button>
+                </form>
+                <% } %>
+        </div>
     </section>
-    <td>
-        <% if (user?._id.equals(trip.user)) { %>
-            <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
-                <button class="btnBlack" type="submit">DELETE</button>
-            </form>
-            <% } %>
-    </td>
+
     <% if (user) { %>
         <h2>Pack your items!!!</h2>
         <div class="detailsForm">
@@ -42,6 +43,7 @@
             </form>
         </div>
         <div class="itemsToBring">
+            <h3>Items to bring</h3>
             <% if (trip.items.length) { %>
                 <table>
                     <thead>

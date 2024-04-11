@@ -29,6 +29,10 @@ nav {
   font-weight: 700;
 }
 
+.centerText {
+  text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -181,6 +185,42 @@ nav .link a:hover {
   margin-top: 20px;
 }
 
+.btnBlack {
+  font-size: 20px;
+  display: block;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(38, 38, 38);
+  text-decoration: none;
+  color: white;
+  margin: 0 10px 0 auto;
+}
+
+.btnBlack:hover {
+  color: rgb(253, 233, 250);
+  background-color: rgb(69, 69, 71);
+}
+
+.btnRed {
+  font-size: 20px;
+  display: block;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(118, 0, 0);
+  text-decoration: none;
+  color: white;
+  margin: 0 10px 0 auto;
+}
+
+.btnRed:hover {
+  color: rgb(253, 233, 250);
+  background-color: rgb(55, 0, 0);
+}
+
 .tripForm .btnBlack {
   font-size: 20px;
   display: block;
@@ -198,6 +238,7 @@ nav .link a:hover {
   color: rgb(253, 233, 250);
   background-color: rgb(69, 69, 71);
 }
+
 
 .tripForm input,
 .tripForm select {
@@ -289,7 +330,7 @@ nav .link a:hover {
   margin: 0 auto;
   margin-top: 50px;
   text-align: center;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
 }
 
@@ -311,7 +352,8 @@ nav .link a:hover {
 }
 
 .tripDetails .detail {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.756);
+  background: linear-gradient(-90deg, rgba(130, 84, 198, 1) 0%, rgba(70, 0, 85, 1) 100%);
   padding: 10px;
   color: white;
   border-radius: 5px;
