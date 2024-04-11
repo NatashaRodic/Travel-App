@@ -94,8 +94,7 @@ nav .link a:hover {
 
 .tripCard .btnBlack {
   display: inline-block;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .tripCard .btnBlack a {
@@ -107,11 +106,14 @@ nav .link a:hover {
   color: white;
 }
 
+.tripCard .btnBlack {
+  padding: 0;
+}
+
 .tripCard .btnBlack a:hover {
   color: rgb(253, 233, 250);
   background-color: rgb(69, 69, 71);
 }
-
 
 .login2 {
   color: white;
@@ -195,7 +197,6 @@ nav .link a:hover {
   background-color: rgb(38, 38, 38);
   text-decoration: none;
   color: white;
-  margin: 0 10px 0 auto;
 }
 
 .btnBlack:hover {
@@ -269,6 +270,10 @@ nav .link a:hover {
 
 
 
+.detailsForm {
+  margin: 0 auto;
+  max-width: 400px;
+}
 
 .detailsForm form {
   padding: 20px;
@@ -326,7 +331,7 @@ nav .link a:hover {
 }
 
 .itemsToBring {
-  max-width: 500px;
+  max-width: 450px;
   margin: 0 auto;
   margin-top: 50px;
   text-align: center;
@@ -340,9 +345,12 @@ nav .link a:hover {
 
 .tripDetails {
   display: flex;
+
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background-color: #dfe1e8;
+  padding: 10px;
 }
 
 .tripDetails .label {
@@ -367,4 +375,21 @@ nav .link a:hover {
   color: white;
   background-color: #e2197d;
   padding: 3px 6px;
+}
+
+.itemsPanel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.itemsPanel * {
+  flex-basis: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .itemsPanel * {
+    flex-basis: 100%;
+  }
+
 }

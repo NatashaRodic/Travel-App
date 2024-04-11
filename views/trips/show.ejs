@@ -22,68 +22,76 @@
     </section>
 
     <% if (user) { %>
-        <h2>Pack your items!!!</h2>
-        <div class="detailsForm">
-            <form method="POST" action="/trips/<%= trip._id %>/items">
-                <div class="name">
-                    <label>Item Name</label>
-                    <input type="text" name="itemName">
-                </div>
-                <div class="quantity">
-                    <label>Item Quantity</label>
-                    <input type="number" name="itemQuantity">
-                </div>
-                <div class="essential">
-                    <label>Is your item Essential?</label>
-                    <input type="checkbox" name="essential">
-                </div>
-                <div class="button">
-                    <input class="btnBlack" type="submit" value="Add Item">
-                </div>
-            </form>
-        </div>
-        <div class="itemsToBring">
-            <h3>Items to bring</h3>
-            <% if (trip.items.length) { %>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Quantity</th>
-                            <th>Essential?</th>
-                            <th>Is your item packed?</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% trip.items.forEach((item)=> { %>
+        <h2 class="centerText">What I'm brining</h2>
+        <div class="itemsPanel">
+            <div class="detailsForm">
+                <form method="POST" action="/trips/<%= trip._id %>/items">
+                    <div class="name">
+                        <label>Item Name</label>
+                        <input type="text" name="itemName">
+                    </div>
+                    <div class="quantity">
+                        <label>Item Quantity</label>
+                        <input type="number" name="itemQuantity">
+                    </div>
+                    <div class="essential">
+                        <label>Is your item Essential?</label>
+                        <input type="checkbox" name="essential">
+                    </div>
+                    <div class="button">
+                        <input class="btnBlack" type="submit" value="Add Item">
+                    </div>
+                </form>
+            </div>
+            <div class="itemsToBring" id="itemsToBring">
+                <h3>Items to bring</h3>
+                <% if (trip.items.length) { %>
+                    <table>
+                        <thead>
                             <tr>
-                                <td>
-                                    <%= item.itemName %>
-                                </td>
-                                <td>
-                                    <%= item.itemQuantity %>
-                                </td>
-                                <td>
-                                    <%= item.essential ? '❗️' : '' %>
-                                </td>
-                                <td>
-                                    <%= item.packed ? '✅' : '' %>
-                                </td>
-                                <td>
-                                    <form action="/items/<%= trip._id %>/<%= item._id %>?_method=PUT" method="POST">
-                                        <button type="submit">
-                                            <%= item.packed ? 'Unpack' : 'Pack' %>
-                                        </button>
-                                    </form>
-                                </td>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Essential?</th>
+                                <th>Packed?</th>
 
-                                <% }); %>
-                    </tbody>
-                </table>
-                <% } else { %>
-                    <h5>No Items Yet? Start creating your list</h5>
-                    <% } %>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% trip.items.forEach((item)=> { %>
+                                <tr>
+                                    <td>
+                                        <%= item.itemName %>
+                                    </td>
+                                    <td>
+                                        <%= item.itemQuantity %>
+                                    </td>
+                                    <td>
+                                        <%= item.essential ? '❗️' : '' %>
+                                    </td>
+                                    <td>
+                                        <%= item.packed ? '✅' : '' %>
+                                    </td>
+                                    <td>
+                                        <form action="/items/<%= trip._id %>/<%= item._id %>?_method=PUT" method="POST">
+                                            <button type="submit">
+                                                <%= item.packed ? 'Unpack' : 'Pack' %>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <script>
+
+                                        emojiBlast({
+                                            emojiCount: 3,
+                                            emojis: ["✈️", "🧳", "🚂", "🎟️"],
+
+                                        })</script>
+                                    <% }); %>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <h5>No Items Yet? Start creating your list</h5>
+                        <% } %>
+            </div>
         </div>
         <% } %>
 
