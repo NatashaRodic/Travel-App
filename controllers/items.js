@@ -21,16 +21,26 @@ async function create(req, res) {
 }
 
 async function update(req, res) {
+    //---console.log(req.body);
+    console.log("I'm updating");
+    //console.log(req.body);
+    console.log(req.params);
+
+    const trip = await Trip.findById(req.params.tripId); // find the trip
+    if (!trip) {
+        console.log('No trip found with that given id');
+    }
+    const item = await trip.items.id(req.params.itemId);
+    console.log(trip);
+    item.packed = !item.packed;
+    //This works
+    // item.packed = true;
     try {
-        const trip = await Trip.findById(req.params.id);
-        await trip.items.findOneAndUpdate(
-            { packed: false },
-            { $set: { packed: true } }
-        );
         await trip.save()
-        return res.redirect(`/trips/${trip._id}`);
-    } catch (e) {
+    }
+    catch (e) {
         console.log(e.message);
         return res.redirect('/trips');
     }
+    res.redirect(`/trips/${trip._id}`);
 }
