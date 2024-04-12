@@ -3,14 +3,14 @@
         <%= title %>
     </h1>
     <div class="tripForm">
-        <form action="/trips" method="POST">
+        <form action="/update/<%= trip._id %>?_method=PUT" method="POST">
             <div class="location">
                 <label>Location</label>
-                <input type="text" name="location">
+                <input value="<%= trip.location %>" type="text" name="location">
             </div>
             <div class="length">
                 <label>How long is your trip?</label>
-                <input type="number" name="tripLength" id="">
+                <input value="<%= trip.tripLength %>" type="number" name="tripLength" id="">
             </div>
             <div class="tripType">
                 <label>Type of your trip</label>
@@ -20,7 +20,7 @@
                 </select>
             </div>
             <div class="button">
-                <button class="btnBlack" type="submit">Create trip</button>
+                <button class="btnBlack" type="submit">Update trip</button>
             </div>
         </form>
     </div>

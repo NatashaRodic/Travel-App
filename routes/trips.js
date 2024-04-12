@@ -13,8 +13,6 @@ router.get('/:id', tripsCtrl.show)
 
 router.delete('/:id', ensureLoggedIn, tripsCtrl.delete)
 
-router.put('/:id', tripsCtrl.update)
-
 
 
 module.exports = router;

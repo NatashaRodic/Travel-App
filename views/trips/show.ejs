@@ -14,7 +14,7 @@
         </div>
         <div>
             <% if (user?._id.equals(trip.user)) { %>
-                <a class="btnBlack" href="/trips">Update Trip</a>
+                <a class="btnBlack" href="/update/<%= trip._id %>">Update Trip</a>
                 <!-- <form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
                     <button class="btnRed" type="submit">Update Trip</button>
                 </form> -->

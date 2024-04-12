@@ -7,13 +7,10 @@ module.exports = {
     create,
     show,
     delete: deleteTrip,
-    update
-
 }
 
 async function index(req, res) {
     const trips = await Trip.find({})
-    console.log(trips)
     res.render('trips/index', { title: 'All Trips', trips });
 }
 
@@ -56,12 +53,5 @@ async function deleteTrip(req, res) {
     }
 }
 
-async function update(req, res) {
-    //---console.log(req.body);
-    const trip = await Trip.findById(req.params.id)
-    console.log("I'm updating YOUR TRIP");
-    //console.log(req.body);
-    console.log(req.params);
-    res.render(`trips/update`, { title: 'Update Trip', trip })
-}
+
 
