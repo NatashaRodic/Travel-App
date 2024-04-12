@@ -49,7 +49,7 @@ The Travel App is a user-centric CRUD application built using Express.js and Mon
 
 ## Getting Started
 
-#### [Travel App](https://travel-plan-app-91ce82dc98aa.herokuapp.com/trips/661849c7e4a54b648ed8b76c) - Link to the deployed app on Heroku.
+#### [Travel App - Live](https://travel-plan-app-91ce82dc98aa.herokuapp.com/) - Link to the deployed app on Heroku.
 
 #### [Trello Board](https://trello.com/invite/b/9e9IhpfR/ATTId8bc2c7cf89c2382fbfac42167e170056DE7DC94/travel-app) - Link to the Trello board with the user stories and wireframes.
 
